@@ -127,28 +127,29 @@
             android:id="@+id/menu_item_newsfeed"
             android:layout_width="match_parent"
             android:layout_height="@dimen/navigation_drawer_items_height"
-            android:padding="@dimen/navigation_drawer_items_padding"
+            android:background="?android:selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
-            android:background="?android:selectableItemBackground">
+            android:padding="@dimen/navigation_drawer_items_padding"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/iv_newsfeed"
                 android:layout_width="@dimen/navigation_drawer_icon_size"
                 android:layout_height="@dimen/navigation_drawer_icon_size"
                 android:layout_centerVertical="true"
-                android:src="@android:drawable/ic_menu_view"
-                android:contentDescription="@string/menu_refresh" />
+                android:contentDescription="@string/menu_refresh"
+                android:src="@android:drawable/ic_menu_view" />
 
             <TextView
                 android:id="@+id/tv_newsfeed"
+                style="@style/MenuDrawerTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/iv_newsfeed"
                 android:layout_marginLeft="@dimen/navigation_drawer_items_icon_title_margin"
+                android:layout_toRightOf="@+id/iv_newsfeed"
                 android:gravity="left"
-                style="@style/MenuDrawerTextStyle"
                 android:text="@string/menu_news_feed" />
 
         </RelativeLayout>

@@ -8,16 +8,16 @@ buildscript {
 
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
-        versionCode 20170312
-        versionName "1.7.7"
+        versionCode 20211213
+        versionName "1.7.7-noNewsfeed"
 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -48,6 +48,6 @@ android {
 final SUPPORT_LIBRARY_VERSION = rootProject.ext.SUPPORT_LIBRARY_VERSION
 
 dependencies {
-    compile "com.android.support:support-v4:${SUPPORT_LIBRARY_VERSION}"
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    implementation "com.android.support:support-v4:${SUPPORT_LIBRARY_VERSION}"
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

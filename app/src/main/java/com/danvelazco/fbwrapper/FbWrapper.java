@@ -121,7 +121,7 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         if (loadInitialPage) {
             // Load the URL depending on the type of device or preference
             Logger.d(LOG_TAG, "Loading the init Facebook URL");
-            loadNewPage(mDomainToUse);
+            loadNewPage(mDomainToUse + URL_PAGE_MESSAGES);
         }
 
     }
@@ -141,7 +141,7 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
 
         // If the domain changes, reload the page with the new domain
         if (!mDomainToUse.equalsIgnoreCase(previousDomainUsed)) {
-            loadNewPage(mDomainToUse);
+            loadNewPage(mDomainToUse + URL_PAGE_MESSAGES);
         }
     }
 
@@ -156,7 +156,7 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         findViewById(R.id.menu_drawer_right).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_jump_to_top).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_refresh).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_item_newsfeed).setOnClickListener(buttonsListener);
+        //findViewById(R.id.menu_item_newsfeed).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_items_notifications).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_messages).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_share_this).setOnClickListener(buttonsListener);
@@ -363,9 +363,9 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
                 case R.id.menu_item_refresh:
                     refreshCurrentPage();
                     break;
-                case R.id.menu_item_newsfeed:
-                    loadNewPage(mDomainToUse);
-                    break;
+                //case R.id.menu_item_newsfeed:
+                //    loadNewPage(mDomainToUse);
+                //    break;
                 case R.id.menu_items_notifications:
                     loadNewPage(mDomainToUse + URL_PAGE_NOTIFICATIONS);
                     break;
