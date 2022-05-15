@@ -23,7 +23,11 @@ import android.view.KeyEvent;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.danvelazco.fbwrapper.activity.BaseFacebookWebViewActivity;
 import com.danvelazco.fbwrapper.util.Logger;
+
+import timber.log.Timber;
 
 /**
  * FacebookWebViewClient.<br/>
@@ -152,7 +156,6 @@ public class FacebookWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-
         // Fire the callback
         fireOnPageFinishedListener(url);
     }
@@ -176,6 +179,10 @@ public class FacebookWebViewClient extends WebViewClient {
     private void fireOnPageFinishedListener(String url) {
         if (mListener != null) {
             mListener.onPageLoadFinished(url);
+            Timber.d("FacebookWebViewClient --> fireOnPageFinishedListener --> URL: %s", url);
+            if (url.equals(BaseFacebookWebViewActivity.INIT_URL_MOBILE + BaseFacebookWebViewActivity.URL_PAGE_MESSAGES)){
+            	Timber.d("FacebookWebViewClient --> fireOnPageFinishedListener --> matching URL");
+            }
         }
     }
 

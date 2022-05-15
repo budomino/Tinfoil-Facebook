@@ -20,6 +20,8 @@ import com.danvelazco.fbwrapper.preferences.FacebookPreferences;
 import com.danvelazco.fbwrapper.util.Logger;
 import com.danvelazco.fbwrapper.util.OrbotHelper;
 
+import timber.log.Timber;
+
 /**
  * Facebook web wrapper activity.
  */
@@ -43,6 +45,7 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
      */
     @Override
     protected void onActivityCreated() {
+        Timber.plant(new Timber.DebugTree());
         Logger.d(LOG_TAG, "onActivityCreated()");
 
         // Set the content view layout
